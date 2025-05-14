@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioInteract" load_steps=5 format=3 uid="uid://bvd2lwvaw045q"]
+
+[ext_resource type="AudioStream" uid="uid://cihxheblvw648" path="res://audio/AudioSteps/sand_walk4.ogg" id="1_2878x"]
+[ext_resource type="Script" uid="uid://c6pmyic2hw0kw" path="res://addons/character-controller/example/main/audios/audio_interact.gd" id="2_yn5r1"]
+[ext_resource type="AudioStream" uid="uid://bb2k506h00htu" path="res://audio/AudioSteps/sand_walk1.ogg" id="3_2878x"]
+[ext_resource type="AudioStream" uid="uid://nh11jo1beqpe" path="res://audio/AudioSteps/sand_walk2.ogg" id="4_xs73r"]
+
+[resource]
+script = ExtResource("2_yn5r1")
+landed_audio = ExtResource("4_xs73r")
+step_audios = Array[AudioStream]([ExtResource("3_2878x"), ExtResource("1_2878x"), ExtResource("4_xs73r")])

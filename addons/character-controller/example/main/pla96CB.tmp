@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://2oxdgu03lnbk"]
+
+[ext_resource type="PackedScene" uid="uid://8oy3xm2sff8" path="res://addons/character-controller/fps/fps_controller_3d.tscn" id="1_fbpun"]
+[ext_resource type="Script" path="res://addons/character-controller/example/main/player.gd" id="2_8r0nc"]
+[ext_resource type="Environment" uid="uid://b3cn01u84faiy" path="res://addons/character-controller/example/main/underwater.tres" id="3_dxksd"]
+[ext_resource type="PackedScene" uid="uid://dyttywy51cj3q" path="res://addons/character-controller/example/main/audios/player_audios.tscn" id="4_ux8kv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ql87"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bto6t"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g1hfh"]
+radius = 0.45
+height = 1.8
+radial_segments = 32
+
+[node name="Player" instance=ExtResource("1_fbpun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+collision_mask = 5
+script = ExtResource("2_8r0nc")
+input_back_action_name = "move_backward"
+input_forward_action_name = "move_forward"
+input_left_action_name = "move_left"
+input_right_action_name = "move_right"
+input_sprint_action_name = "move_sprint"
+input_jump_action_name = "move_jump"
+input_crouch_action_name = "move_crouch"
+input_fly_mode_action_name = "move_fly_mode"
+underwater_env = ExtResource("3_dxksd")
+
+[node name="Collision" parent="." index="0"]
+shape = SubResource("CapsuleShape3D_0ql87")
+
+[node name="Crouch Ability 3D" parent="." index="7"]
+speed_multiplier = 0.7
+height_in_crouch = 1.0
+default_height = 1.8
+_active = false
+
+[node name="Head" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="Camera" parent="Head" index="0"]
+near = 0.02
+
+[node name="Interact" type="RayCast3D" parent="Head" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.428983)
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="Cross" type="TextureRect" parent="Head" index="3"]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_bto6t")
+
+[node name="HoldPos" type="Node3D" parent="Head" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.13285)
+
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="Head" index="5"]
+node_a = NodePath("../Rotator")
+linear_limit_x/enabled = false
+linear_limit_y/enabled = false
+linear_limit_z/enabled = false
+
+[node name="Rotator" type="StaticBody3D" parent="Head" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.133)
+
+[node name="Player Audios" parent="." index="9" instance=ExtResource("4_ux8kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.90086, 0)
+audio_interact = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="10"]
+visible = false
+mesh = SubResource("CapsuleMesh_g1hfh")
