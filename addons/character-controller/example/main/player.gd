@@ -85,8 +85,6 @@ func _on_controller_emerged():
 func _on_controller_subemerged():
 	camera.environment = underwater_env
 
-func death():
-	print("ded")
 	
 func save():
 	var save_dict = {		"filename" : get_scene_file_path(),

@@ -27,7 +27,7 @@ project/assembly_name="ElectroVR"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/character-controller/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg")
+enabled=PackedStringArray("res://addons/character-controller/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg", "res://addons/graph_2d/plugin.cfg")
 
 [global_group]
 
