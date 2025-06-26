@@ -1,6 +1,6 @@
 extends Control
 @onready var graph = $Graph2D
-@export var InputValue : StaticBody3D
+@export var InputValue : Node3D
 
 var x = 0.0
 var plot1 
@@ -10,7 +10,8 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	var y: float = InputValue.output
+	var y: float = float(InputValue.output)
+	print(InputValue.output)
 	plot1.add_point(Vector2(x,y))
 	x += delta
 	if x > graph.x_max:

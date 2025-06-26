@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Godot\\electrovr-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CA9CBC3D-B230-4B61-830C-03FA646E0C4B}|ElectroVR.csproj|c:\\godot\\electrovr-main\\c#scripts\\arduinoconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA9CBC3D-B230-4B61-830C-03FA646E0C4B}|ElectroVR.csproj|solutionrelative:c#scripts\\arduinoconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ArduinoConnect.cs",
+              "DocumentMoniker": "C:\\Godot\\electrovr-main\\C#Scripts\\ArduinoConnect.cs",
+              "RelativeDocumentMoniker": "C#Scripts\\ArduinoConnect.cs",
+              "ToolTip": "C:\\Godot\\electrovr-main\\C#Scripts\\ArduinoConnect.cs",
+              "RelativeToolTip": "C#Scripts\\ArduinoConnect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T08:12:52.058Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

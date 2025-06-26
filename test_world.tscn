@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b85g157ym5ygb"]
+[gd_scene load_steps=13 format=3 uid="uid://b85g157ym5ygb"]
 
 [ext_resource type="PackedScene" uid="uid://wtpd17fnwolq" path="res://GrabBox.tscn" id="1_dxppu"]
 [ext_resource type="PackedScene" uid="uid://bv6uk4450uye3" path="res://UI/Graf.tscn" id="2_gy3sr"]
 [ext_resource type="PackedScene" uid="uid://dw0eipl2hrbqg" path="res://objects/nuke_reactor.tscn" id="3_1lwx6"]
+[ext_resource type="Script" uid="uid://dsmx1x82gt6aa" path="res://C#Scripts/ArduinoConnect.cs" id="4_dsnr4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxppu"]
 albedo_color = Color(0.800492, 0.80049, 0.800491, 1)
@@ -73,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028857, 0.119276, 1.12784)
 [node name="SubViewport" type="SubViewport" parent="."]
 
 [node name="GraphInfo" parent="SubViewport" node_paths=PackedStringArray("InputValue") instance=ExtResource("2_gy3sr")]
-InputValue = NodePath("../../NukeReactor")
+InputValue = NodePath("../../Arduin")
 
 [node name="GraptTest" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.6888, -4.63918)
@@ -82,3 +83,8 @@ skeleton = NodePath("../SubViewport")
 
 [node name="NukeReactor" parent="." instance=ExtResource("3_1lwx6")]
 transform = Transform3D(0.487265, 0, -0.873254, 0, 1, 0, 0.873254, 0, 0.487265, -2.60895, -0.5, -5.2718)
+
+[node name="Arduin" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00639, 1.64625, -6.45504)
+text = "Cum"
+script = ExtResource("4_dsnr4")
