@@ -3,11 +3,11 @@ using System;
 using System.IO.Ports;
 using System.Text;
 using System.Globalization;
+using System.Collections;
 
 public partial class ArduinoConnect : Label3D
 {
 	SerialPort sport;
-	Label3D label;
 	int output;
 
 	string output_name = "HZ";
@@ -22,9 +22,16 @@ public partial class ArduinoConnect : Label3D
 
 	public override void _Process(double delta)
 	{
-		if (!sport.IsOpen) return;
-		string sermess = sport.ReadExisting();
-		output = int.Parse(sermess, CultureInfo.InvariantCulture.NumberFormat);
-		base.Text = sermess;
+		try
+		{
+			if (!sport.IsOpen) return;
+			string sermess = sport.ReadExisting();
+			output = int.Parse(sermess, CultureInfo.InvariantCulture.NumberFormat);
+			base.Text = sermess;
+		}
+		catch (Exception ex )
+		{
+			
+		}
 	}
 }

@@ -99,20 +99,9 @@ func save():
 		"global_rotation" : global_rotation}
 	return save_dict
 	
-func turnfix(rotvector : Vector3):
-	self.head.actual_rotation = rotvector
-	self.global_rotation.y = rotvector.y
-	
 func interact():
 	var detectedint = interactor.get_collider()
 	if detectedint != null:
 		if detectedint.has_method("use"):
 			if detectedint.script != null:
 				detectedint.use()
-
-
-func _on_dialogue_box_dialogue_ended() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	set_process_input(true)
-	$cross.visible = true
-	pass # Replace with function body.

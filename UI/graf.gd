@@ -11,7 +11,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var y: float = float(InputValue.output)
-	print(InputValue.output)
 	plot1.add_point(Vector2(x,y))
 	x += delta
 	if x > graph.x_max:
