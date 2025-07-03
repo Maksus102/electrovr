@@ -3,16 +3,17 @@ extends StaticBody3D
 @export var curve : Curve
 @export var output = 0.0
 @onready var timer = $Timer
+@export var graph_exp : Control
 
 var state = false
 var updtime : Timer
-var output_name = "Hz"
+var output_name = "NukeEnergy"
 
 func _ready() -> void:
 	pass
 
 func _on_timer_timeout() -> void:
-	output = snappedf(randf_range(0,1),0.01)
+	output = snappedf(randf_range(15,500),0.01)
 	text.text = str(output)
 	pass # Replace with function body.
 	

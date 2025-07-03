@@ -418,6 +418,9 @@ func _button_pressed() -> void:
 	if $RayCast.is_colliding():
 		# Report pressed
 		target = $RayCast.get_collider()
+		if target.has_method("use"):
+			if target.script != null:
+				target.use()
 		last_collided_at = $RayCast.get_collision_point()
 		XRToolsPointerEvent.pressed(self, target, last_collided_at)
 

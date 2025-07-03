@@ -2,23 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0yfmf8icomvn"
-path="res://.godot/imported/Reactor_0.png-75f5736d047a5f7e64db5d66f8e9ad4b.ctex"
+uid="uid://bdu55lw58x3j1"
+path.s3tc="res://.godot/imported/Bulb1_Focus_01.png-124175aa56b6527716ac78294b84acd7.s3tc.ctex"
 metadata={
-"vram_texture": false
-}
-generator_parameters={
-"md5": "7df51c5c38cddbf98086eb4ade161d72"
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://objects/Reactor_0.png"
-dest_files=["res://.godot/imported/Reactor_0.png-75f5736d047a5f7e64db5d66f8e9ad4b.ctex"]
+source_file="res://meshes/Bulb1_Focus_01.png"
+dest_files=["res://.godot/imported/Bulb1_Focus_01.png-124175aa56b6527716ac78294b84acd7.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dw0eipl2hrbqg"]
 
-[ext_resource type="PackedScene" uid="uid://dvo3wh4813sfi" path="res://objects/Reactor.gltf" id="1_wv7u2"]
+[ext_resource type="PackedScene" uid="uid://dvo3wh4813sfi" path="res://meshes/Reactor.gltf" id="1_wv7u2"]
 [ext_resource type="FontFile" uid="uid://bkmqhdyvup080" path="res://UI/TDAText.ttf" id="2_3yg2h"]
 [ext_resource type="Script" uid="uid://d06t7tpc254wa" path="res://objects/nuke_reactor.gd" id="2_8nx5u"]
 

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d254k6pkvvrc0"]
+
+[ext_resource type="Script" uid="uid://y1tid4fdwbn0" path="res://scripts/buttonConnect.gd" id="1_y30wj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8nx5u"]
+size = Vector3(0.133545, 0.265625, 0.543213)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3yg2h"]
+size = Vector2(0.5, 0.2)
+
+[node name="ButtonConnect" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_y30wj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8nx5u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_3yg2h")
+skeleton = NodePath("../..")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00774348, 0, 0)
+pixel_size = 0.004
+texture_filter = 0
+text = "Вывод"
