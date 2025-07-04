@@ -1,8 +1,11 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bxc3l1nfvy4g2"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bxc3l1nfvy4g2"]
 
 [ext_resource type="Texture2D" uid="uid://nm0qo6m05453" path="res://materials/Bricks/Bricks_25-256x256.png" id="1_fog57"]
+[ext_resource type="Texture2D" uid="uid://d3e04u84d2nu1" path="res://materials/Bricks/BrickNM.jpg" id="2_pmmrb"]
 
 [resource]
 albedo_texture = ExtResource("1_fog57")
+normal_enabled = true
+normal_texture = ExtResource("2_pmmrb")
 uv1_scale = Vector3(0.8, 0.8, 0.8)
 uv1_triplanar = true

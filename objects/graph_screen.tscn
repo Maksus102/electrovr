@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://c58kvxnyu2sd"]
+
+[ext_resource type="Script" uid="uid://c3q76fhqbkbis" path="res://scripts/graf.gd" id="1_1f7kf"]
+[ext_resource type="Theme" uid="uid://4et5w34ko37o" path="res://UI/MainTheme.tres" id="2_se26g"]
+[ext_resource type="PackedScene" uid="uid://b2xpvxvm54rn1" path="res://meshes/GraphReg.glb" id="2_wkexp"]
+[ext_resource type="Script" uid="uid://dqm72mgp8vx1i" path="res://addons/graph_2d/graph_2d.gd" id="3_0ho3m"]
+[ext_resource type="Script" uid="uid://mo4bds1fqr84" path="res://scripts/input_graph.gd" id="5_0ho3m"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tt4oa"]
+viewport_path = NodePath("Screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkexp"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_tt4oa")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tt4oa"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_wkexp")
+size = Vector2(0.7, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1f7kf"]
+size = Vector3(0.72435, 0.845947, 0.681366)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ho3m"]
+size = Vector3(0.0557617, 0.0606445, 0.1)
+
+[node name="GraphScreen" type="StaticBody3D"]
+script = ExtResource("1_1f7kf")
+
+[node name="Screen" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0573799, 0.332016)
+mesh = SubResource("QuadMesh_tt4oa")
+
+[node name="SubViewport" type="SubViewport" parent="Screen"]
+
+[node name="GraphInfo" type="Control" parent="Screen/SubViewport"]
+texture_filter = 1
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_se26g")
+
+[node name="Graph2D" type="Control" parent="Screen/SubViewport/GraphInfo"]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_se26g")
+script = ExtResource("3_0ho3m")
+x_label = "Time (sec)"
+y_max = 1000.0
+grid_horizontal_visible = true
+grid_vertical_visible = true
+metadata/_custom_type_script = "uid://dqm72mgp8vx1i"
+
+[node name="GraphReg" parent="." instance=ExtResource("2_wkexp")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="BasicCol" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00637054, 0.00549316, 0.00587463)
+shape = SubResource("BoxShape3D_1f7kf")
+
+[node name="VirtualInput" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.292355, -0.31573, 0.358067)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_0ho3m")
+PortNum = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VirtualInput"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00288087, -0.00532228, 0)
+shape = SubResource("BoxShape3D_0ho3m")
+
+[node name="VirtualInput2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201336, -0.31573, 0.358067)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_0ho3m")
+PortNum = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VirtualInput2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00288087, -0.00532228, 0)
+shape = SubResource("BoxShape3D_0ho3m")
+
+[node name="VirtualInput3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111737, -0.31573, 0.358067)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_0ho3m")
+PortNum = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VirtualInput3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00288087, -0.00532228, 0)
+shape = SubResource("BoxShape3D_0ho3m")
+
+[editable path="GraphReg"]

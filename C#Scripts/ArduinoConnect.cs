@@ -19,6 +19,8 @@ public partial class ArduinoConnect : Node3D
 	public override void _Ready()
 	{
 		sport = new SerialPort();
+		GetTree().GetFirstNodeInGroup("Global").Call("SeeSharpProducerAppend",this);
+
 	}
 
 	public override void _Process(double delta)

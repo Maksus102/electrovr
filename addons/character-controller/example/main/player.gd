@@ -31,6 +31,7 @@ class_name Player
 
 var cursstate = false
 
+var OutputSelect : Node3D
 
 var inv_state = false
 

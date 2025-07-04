@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_nfw85"]
 [ext_resource type="PackedScene" uid="uid://bkdeegb8w3oah" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_fullglove_low.tscn" id="5_22dg0"]
 
-[node name="VrPlayer" type="XROrigin3D"]
+[node name="VrPlayer" type="XROrigin3D" groups=["Player"]]
 current = true
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]

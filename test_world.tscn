@@ -1,12 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://b85g157ym5ygb"]
+[gd_scene load_steps=13 format=3 uid="uid://b85g157ym5ygb"]
 
 [ext_resource type="Material" uid="uid://hxloc4vbp5jp" path="res://materials/Concrete/concrete.tres" id="1_cnaw2"]
 [ext_resource type="PackedScene" uid="uid://wtpd17fnwolq" path="res://GrabBox.tscn" id="1_dxppu"]
 [ext_resource type="Material" uid="uid://bxc3l1nfvy4g2" path="res://materials/Bricks/Bricks.tres" id="1_lf0gk"]
-[ext_resource type="PackedScene" uid="uid://bv6uk4450uye3" path="res://UI/Graf.tscn" id="2_gy3sr"]
 [ext_resource type="PackedScene" uid="uid://dw0eipl2hrbqg" path="res://objects/nuke_reactor.tscn" id="3_1lwx6"]
 [ext_resource type="PackedScene" uid="uid://cphsvrkxbbu70" path="res://arduino.tscn" id="4_dsnr4"]
 [ext_resource type="PackedScene" uid="uid://cfskrk036ye0r" path="res://objects/bulba.tscn" id="7_kt6p6"]
+[ext_resource type="PackedScene" uid="uid://c58kvxnyu2sd" path="res://objects/graph_screen.tscn" id="8_4tg7h"]
 [ext_resource type="PackedScene" uid="uid://d254k6pkvvrc0" path="res://objects/button_connect.tscn" id="8_uu1iw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t34gm"]
@@ -21,19 +21,6 @@ sky_material = SubResource("ProceduralSkyMaterial_t34gm")
 sky = SubResource("Sky_dxppu")
 tonemap_mode = 4
 ssao_enabled = true
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_1lwx6"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gy3sr"]
-resource_local_to_scene = true
-albedo_color = Color(0, 0, 0, 1)
-emission_enabled = true
-emission_texture = SubResource("ViewportTexture_1lwx6")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_1lwx6"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_gy3sr")
 
 [node name="TestWorld" type="Node3D"]
 
@@ -100,23 +87,12 @@ collision_layer = 0
 collision_mask = 3
 mass = 5.0
 
-[node name="SubViewport" type="SubViewport" parent="."]
-
-[node name="GraphInfo" parent="SubViewport" instance=ExtResource("2_gy3sr")]
-
-[node name="GraptTest" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.28619, 1.6888, -4.53433)
-mesh = SubResource("PlaneMesh_1lwx6")
-skeleton = NodePath("../SubViewport")
-
-[node name="NukeReactor" parent="." node_paths=PackedStringArray("graph_exp") instance=ExtResource("3_1lwx6")]
+[node name="NukeReactor" parent="." instance=ExtResource("3_1lwx6")]
 transform = Transform3D(1.32527, 0, 1.49789, 0, 2, 0, -1.49789, 0, 1.32527, -2.30733, -0.5, 5.37096)
-graph_exp = NodePath("../SubViewport/GraphInfo")
 
-[node name="ButtonConnect" parent="NukeReactor" node_paths=PackedStringArray("Source", "Graph") instance=ExtResource("8_uu1iw")]
+[node name="ButtonConnect" parent="NukeReactor" node_paths=PackedStringArray("Source") instance=ExtResource("8_uu1iw")]
 transform = Transform3D(0.331316, 0, -0.374471, 0, 0.5, 0, 0.374471, 0, 0.331316, 0.686244, 0.220175, -0.463987)
 Source = NodePath("..")
-Graph = NodePath("../../SubViewport/GraphInfo")
 
 [node name="Arduino" parent="." node_paths=PackedStringArray("light") instance=ExtResource("4_dsnr4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03974, 1.65921, -4.60196)
@@ -138,7 +114,9 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -0.002
 shadow_enabled = true
 omni_range = 9.792
 
-[node name="ButtonConnect" parent="." node_paths=PackedStringArray("Source", "Graph") instance=ExtResource("8_uu1iw")]
+[node name="ButtonConnect" parent="." node_paths=PackedStringArray("Source") instance=ExtResource("8_uu1iw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.838547, 0.320882, -4.68953)
 Source = NodePath("../Arduino")
-Graph = NodePath("../SubViewport/GraphInfo")
+
+[node name="GraphScreen" parent="." instance=ExtResource("8_4tg7h")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.56814, 1.53773, -4.66601)

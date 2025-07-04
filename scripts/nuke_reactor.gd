@@ -10,6 +10,7 @@ var updtime : Timer
 var output_name = "NukeEnergy"
 
 func _ready() -> void:
+	Global.producers.append(self)
 	pass
 
 func _on_timer_timeout() -> void:
