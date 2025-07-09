@@ -13,6 +13,7 @@ func _ready() -> void:
 	plot1 = graph.add_plot_item("null",Color.BLUE,0.5)
 	plot2 = graph.add_plot_item("null",Color.GREEN,0.5)
 	plot3 = graph.add_plot_item("null",Color.YELLOW,0.5)
+	Global.graphs.append(self)
 	pass
 
 func _process(delta: float) -> void:

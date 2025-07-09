@@ -2,6 +2,7 @@ extends Node
 
 var xr_interface : XRInterface
 var producers : Array[Node3D]
+var graphs : Array[Node3D]
 
 func _ready():
 	var spawnp = get_tree().get_first_node_in_group("SpawnPoint")

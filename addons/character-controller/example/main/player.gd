@@ -28,6 +28,7 @@ class_name Player
 @onready var interactor = $"Head/Interact"
 @onready var holder = $"Head/HoldPos"
 @onready var GloSig = get_node("/root/Global")
+@onready var graph = $GraphEdit
 
 var cursstate = false
 
@@ -68,6 +69,12 @@ func _input(event: InputEvent) -> void:
 	# Mouse look (only if the mouse is captured).
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_head(event.relative)
+		
+	if Input.is_action_just_pressed("open_grid"):
+		if graph.visible == false:
+			graph.visible = true
+		else:
+			graph.visible = false
 			
 	if Input.is_action_just_released("Interact"):
 		interact()
