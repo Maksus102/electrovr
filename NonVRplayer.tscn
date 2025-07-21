@@ -92,6 +92,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 grid_pattern = 1
+right_disconnects = true
 script = ExtResource("4_b8660")
 
 [node name="Refresh" type="Button" parent="GraphEdit" index="1"]
@@ -105,4 +106,5 @@ grow_horizontal = 0
 text = "Refresh"
 
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="_on_connection_request"]
+[connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="_on_disconnection_request"]
 [connection signal="pressed" from="GraphEdit/Refresh" to="GraphEdit" method="_on_refresh_pressed"]

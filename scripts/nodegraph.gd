@@ -21,6 +21,8 @@ func _on_refresh_pressed() -> void:
 
 func _on_connection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
 	connect_node(from_node,from_port,to_node,to_port)
+	print(connections)
+	var target_node : GraphNode = get_node("{0}".format({"0" : to_node}))
 	match to_port:
 		0:
 			get_node("{0}".format({"0" : to_node})).parent.Connect(1,get_node("{0}".format({"0" : from_node})).parent)
@@ -28,4 +30,16 @@ func _on_connection_request(from_node: StringName, from_port: int, to_node: Stri
 			get_node("{0}".format({"0" : to_node})).parent.Connect(2,get_node("{0}".format({"0" : from_node})).parent)
 		2:
 			get_node("{0}".format({"0" : to_node})).parent.Connect(3,get_node("{0}".format({"0" : from_node})).parent)
+	pass # Replace with function body.
+
+
+func _on_disconnection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
+	disconnect_node(from_node,from_port,to_node,to_port)
+	match from_port:
+		0:
+			get_node("{0}".format({"0" : to_node})).parent.Disconnect(1)
+		1:
+			get_node("{0}".format({"0" : to_node})).parent.Disconnect(2)
+		2:
+			get_node("{0}".format({"0" : to_node})).parent.Disconnect(3)
 	pass # Replace with function body.

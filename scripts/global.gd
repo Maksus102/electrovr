@@ -3,6 +3,8 @@ extends Node
 var xr_interface : XRInterface
 var producers : Array[Node3D]
 var graphs : Array[Node3D]
+static var savesys : SaveFile
+static var player : Player
 
 func _ready():
 	var spawnp = get_tree().get_first_node_in_group("SpawnPoint")
@@ -32,3 +34,19 @@ func FindPlayer() -> Player:
 	
 func SeeSharpProducerAppend(producer : Node3D):
 	producers.append(producer)
+	
+static func save_game():
+	savesys.player_transform = player.global_position
+	savesys.level_name = SaveFile.temp_level_name
+	savesys.write_save()
+	
+func create_save():
+	if SaveFile.save_exists():
+		savesys = SaveFile.load_save() as SaveFile
+	else:
+		savesys = SaveFile.new()
+	pass
+	
+func load_game():
+	savesys.load_save()
+	player.global_position = savesys.player_transform

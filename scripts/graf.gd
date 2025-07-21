@@ -52,3 +52,18 @@ func Connect(port : int,source : Node3D):
 func use():
 	Global.FindPlayer().grab($".")
 	
+func Disconnect(port : int):
+	if (port == 1):	
+		graph.remove_plot_item(plot1)
+		plot1 = graph.add_plot_item("null",Color.YELLOW,0.5)
+		InputValue1 = null
+	elif (port == 2):	
+		graph.remove_plot_item(plot2)
+		plot2 = graph.add_plot_item("null",Color.YELLOW,0.5)
+		InputValue2 = null
+	elif (port == 3):	
+		graph.remove_plot_item(plot3)
+		plot3 = graph.add_plot_item("null",Color.YELLOW,0.5)
+		InputValue3 = null
+	pass
+	

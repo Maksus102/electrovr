@@ -1,15 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://b85g157ym5ygb"]
+[gd_scene load_steps=11 format=3 uid="uid://b85g157ym5ygb"]
 
-[ext_resource type="Material" uid="uid://hxloc4vbp5jp" path="res://materials/Concrete/concrete.tres" id="1_cnaw2"]
 [ext_resource type="PackedScene" uid="uid://wtpd17fnwolq" path="res://objects/GrabBox.tscn" id="1_dxppu"]
-[ext_resource type="Material" uid="uid://bxc3l1nfvy4g2" path="res://materials/Bricks/Bricks.tres" id="1_lf0gk"]
 [ext_resource type="PackedScene" uid="uid://dw0eipl2hrbqg" path="res://objects/nuke_reactor.tscn" id="3_1lwx6"]
 [ext_resource type="PackedScene" uid="uid://cphsvrkxbbu70" path="res://objects/arduino.tscn" id="4_dsnr4"]
+[ext_resource type="PackedScene" uid="uid://26mf1bg3eq43" path="res://meshes/Lab.glb" id="6_kt6p6"]
 [ext_resource type="PackedScene" uid="uid://cfskrk036ye0r" path="res://objects/bulba.tscn" id="7_kt6p6"]
+[ext_resource type="LightmapGIData" uid="uid://b0r7xh47lo0de" path="res://test_world.lmbake" id="7_uu1iw"]
 [ext_resource type="PackedScene" uid="uid://c58kvxnyu2sd" path="res://objects/graph_screen.tscn" id="8_4tg7h"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t34gm"]
-albedo_color = Color(0.259269, 0.219968, 0.803493, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t34gm"]
 
@@ -23,91 +20,77 @@ ssao_enabled = true
 
 [node name="TestWorld" type="Node3D"]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24013, -1, 0.987329)
-use_collision = true
-size = Vector3(17.4585, 1, 14.2071)
-material = ExtResource("1_cnaw2")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24013, 4.84759, 0.988367)
-use_collision = true
-size = Vector3(17.4585, 1, 14.2092)
-material = ExtResource("1_cnaw2")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25159, 1.80554, -5.59762)
-use_collision = true
-size = Vector3(17.4262, 5.14477, 1.03721)
-material = ExtResource("1_lf0gk")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.4481, 1.80554, 0.921955)
-use_collision = true
-size = Vector3(12.6374, 5.14477, 1.03721)
-material = ExtResource("1_lf0gk")
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.97629, 1.80554, 0.921955)
-use_collision = true
-size = Vector3(12.6374, 5.14477, 1.03721)
-material = ExtResource("1_lf0gk")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25159, 1.80554, 7.58572)
-use_collision = true
-size = Vector3(17.4262, 5.14477, 1.03721)
-material = ExtResource("1_lf0gk")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.156669, -0.319689, -0.352791)
-use_collision = true
-size = Vector3(2.36159, 0.37793, 3.72881)
-material = SubResource("StandardMaterial3D_t34gm")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84429, -0.405474, -0.352791)
-use_collision = true
-size = Vector3(2.36159, 0.20636, 3.72881)
-material = SubResource("StandardMaterial3D_t34gm")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dxppu")
 
 [node name="SpawnPoint" type="Marker3D" parent="." groups=["SpawnPoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8671, -0.100163, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71134, 0.849965, 1.70792)
 
 [node name="GrabBox" parent="." instance=ExtResource("1_dxppu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028857, 0.119276, 1.12784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27091, 0.25, 1.12784)
 collision_layer = 0
 collision_mask = 3
 mass = 5.0
 
 [node name="NukeReactor" parent="." instance=ExtResource("3_1lwx6")]
-transform = Transform3D(1.32527, 0, 1.49789, 0, 2, 0, -1.49789, 0, 1.32527, -2.30733, -0.5, 5.37096)
+transform = Transform3D(0.662634, 0, 0.748944, 0, 1, 0, -0.748944, 0, 0.662634, -3.58994, -1.25e-09, 4.69257)
 
 [node name="Arduino" parent="." node_paths=PackedStringArray("light") instance=ExtResource("4_dsnr4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03974, 1.65921, -4.60196)
+transform = Transform3D(0.0152536, 0, -0.999884, 0, 1, 0, 0.999884, 0, 0.0152536, 5.33797, 1.65921, 0.524103)
 light = NodePath("../Bulba/OmniLight3D")
 
 [node name="Bulba" parent="." instance=ExtResource("7_kt6p6")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 9.19147, 2.2874, -5.08283)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.85667, 2.2874, -1.00843)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Bulba"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00102043, 0.19274, -0.00603008)
 light_energy = 0.0
 shadow_enabled = true
 
-[node name="Bulba2" parent="." instance=ExtResource("7_kt6p6")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 4.72711, 4.35535, 0.827496)
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="Bulba2"]
-transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -0.00226974, 0.21682, -0.00834203)
-shadow_enabled = true
-omni_range = 9.792
-
 [node name="GraphScreen" parent="." instance=ExtResource("8_4tg7h")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.56814, 1.53773, -4.66601)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.83336, 1.53773, -1.05016)
+
+[node name="Lab" parent="." instance=ExtResource("6_kt6p6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38553, 0, 1.44491)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38144, 3.80189, 1.00087)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226152, 3.80189, 1.00087)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98064, 3.80189, 1.00087)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38144, 3.80189, 3.55983)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226152, 3.80189, 3.55983)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98064, 3.80189, 3.55983)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+supersampling = true
+interior = true
+light_data = ExtResource("7_uu1iw")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.523865, 2.00635, 2.24705)
+size = Vector3(13.2743, 6.26172, 8.60596)
+box_projection = true
