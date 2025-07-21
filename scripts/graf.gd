@@ -49,3 +49,6 @@ func Connect(port : int,source : Node3D):
 		plot3 = graph.add_plot_item(InputValue3.output_name,Color.YELLOW,0.5)
 	pass
 	
+func use():
+	Global.FindPlayer().grab($".")
+	

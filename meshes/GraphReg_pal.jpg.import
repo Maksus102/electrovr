@@ -2,13 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0sqdmsnyuf62"
+uid="uid://cgv0khpkqggpe"
 path="res://.godot/imported/GraphReg_pal.jpg-9b2c9e8c3044fb4daea2a44ee648a721.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "4184372e2c4d759e599de37768276fea"
+"md5": "e7a1bf32f83a60240ad69b9b09aeec87"
 }
 
 [deps]
@@ -26,7 +26,7 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
+roughness/mode=1
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false

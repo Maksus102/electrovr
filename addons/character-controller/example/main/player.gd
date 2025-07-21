@@ -36,6 +36,8 @@ var OutputSelect : Node3D
 
 var inv_state = false
 
+var grab_obj : Node3D
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	setup()
@@ -47,6 +49,9 @@ func _ready():
 func _physics_process(delta):
 	var is_valid_input := Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 
+	if grab_obj != null:
+		grab_obj.global_position = grab_obj.global_position.lerp(holder.global_position,delta * 8)
+		grab_obj.look_at_from_position(holder.global_position,$Head.global_position,Vector3.UP,true)
 	
 	if is_valid_input:
 		if Input.is_action_just_pressed(input_fly_mode_action_name):
@@ -62,6 +67,7 @@ func _physics_process(delta):
 		# NOTE: It is important to always call move() even if we have no inputs 
 		## to process, as we still need to calculate gravity and collisions.
 		move(delta)
+
 		
 
 
@@ -113,3 +119,10 @@ func interact():
 		if detectedint.has_method("use"):
 			if detectedint.script != null:
 				detectedint.use()
+				
+func grab(obj : StaticBody3D):
+	if grab_obj == null:
+		grab_obj = obj
+	else:
+		grab_obj = null
+	pass

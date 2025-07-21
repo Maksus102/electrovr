@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://b85g157ym5ygb"]
 
 [ext_resource type="Material" uid="uid://hxloc4vbp5jp" path="res://materials/Concrete/concrete.tres" id="1_cnaw2"]
-[ext_resource type="PackedScene" uid="uid://wtpd17fnwolq" path="res://GrabBox.tscn" id="1_dxppu"]
+[ext_resource type="PackedScene" uid="uid://wtpd17fnwolq" path="res://objects/GrabBox.tscn" id="1_dxppu"]
 [ext_resource type="Material" uid="uid://bxc3l1nfvy4g2" path="res://materials/Bricks/Bricks.tres" id="1_lf0gk"]
 [ext_resource type="PackedScene" uid="uid://dw0eipl2hrbqg" path="res://objects/nuke_reactor.tscn" id="3_1lwx6"]
-[ext_resource type="PackedScene" uid="uid://cphsvrkxbbu70" path="res://arduino.tscn" id="4_dsnr4"]
+[ext_resource type="PackedScene" uid="uid://cphsvrkxbbu70" path="res://objects/arduino.tscn" id="4_dsnr4"]
 [ext_resource type="PackedScene" uid="uid://cfskrk036ye0r" path="res://objects/bulba.tscn" id="7_kt6p6"]
 [ext_resource type="PackedScene" uid="uid://c58kvxnyu2sd" path="res://objects/graph_screen.tscn" id="8_4tg7h"]
 
