@@ -10,7 +10,7 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_tt4oa"]
 viewport_path = NodePath("Screen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkexp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykih1"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
@@ -18,7 +18,7 @@ emission_texture = SubResource("ViewportTexture_tt4oa")
 
 [sub_resource type="QuadMesh" id="QuadMesh_tt4oa"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_wkexp")
+material = SubResource("StandardMaterial3D_ykih1")
 size = Vector2(0.7, 0.6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xe8wy"]

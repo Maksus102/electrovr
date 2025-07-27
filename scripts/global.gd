@@ -48,5 +48,5 @@ func create_save():
 	pass
 	
 func load_game():
-	savesys.load_save()
+	SaveFile.load_save()
 	player.global_position = savesys.player_transform

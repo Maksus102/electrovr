@@ -22,7 +22,7 @@ func _on_refresh_pressed() -> void:
 func _on_connection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
 	connect_node(from_node,from_port,to_node,to_port)
 	print(connections)
-	var target_node : GraphNode = get_node("{0}".format({"0" : to_node}))
+	var _target_node : GraphNode = get_node("{0}".format({"0" : to_node}))
 	match to_port:
 		0:
 			get_node("{0}".format({"0" : to_node})).parent.Connect(1,get_node("{0}".format({"0" : from_node})).parent)

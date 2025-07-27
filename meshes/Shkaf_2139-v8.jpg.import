@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd0ogy6c8b7ps"
-path.s3tc="res://.godot/imported/Lab_linen-texture-wallpaper-2412-mm-architextures.jpg-92ac0a4ee97e60544fdda00ed9921a43.s3tc.ctex"
+uid="uid://st6jjj8kribv"
+path.s3tc="res://.godot/imported/Shkaf_2139-v8.jpg-6324834bbfbc32532cd46141be844252.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "b4ef3ca070908fcd598171d1431b0a66"
+}
 
 [deps]
 
-source_file="res://meshes/Lab_linen-texture-wallpaper-2412-mm-architextures.jpg"
-dest_files=["res://.godot/imported/Lab_linen-texture-wallpaper-2412-mm-architextures.jpg-92ac0a4ee97e60544fdda00ed9921a43.s3tc.ctex"]
+source_file="res://meshes/Shkaf_2139-v8.jpg"
+dest_files=["res://.godot/imported/Shkaf_2139-v8.jpg-6324834bbfbc32532cd46141be844252.s3tc.ctex"]
 
 [params]
 

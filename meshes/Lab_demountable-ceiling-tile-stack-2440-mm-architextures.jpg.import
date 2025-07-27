@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmtusehc4vmx6"
+uid="uid://yitdug3ss41y"
 path.s3tc="res://.godot/imported/Lab_demountable-ceiling-tile-stack-2440-mm-architextures.jpg-cb7adb04940f06debca150eb3b0ef837.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "594f431c9e8720f6bb3652073eb1b3c9"
 }
 
 [deps]

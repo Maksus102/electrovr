@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jks4068y5ev6"
+uid="uid://decnmje7bgvql"
 path.s3tc="res://.godot/imported/Lab_solo-grey-stack-1610-mm-architextures.jpg-dda2fdd409902ce5e052dc1e83a5ac50.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "f552ccc9522c548ff8375dd36875260d"
 }
 
 [deps]

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhvkswgxov7yq"
+uid="uid://c5o10odovh6wl"
 path.s3tc="res://.godot/imported/Lab_Metal009_1K-JPG_Color.jpg-395dfd9fc7efa1b8c2b3952fb908917e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "65671f60cdd7bced3d966f0967bf5379"
 }
 
 [deps]

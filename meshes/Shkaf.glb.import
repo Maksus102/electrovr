@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://fyqswt7opr0q"
-path="res://.godot/imported/Lab.glb-e2fc9230d2cdaebccf6c1c0a99dcf48a.scn"
+uid="uid://vfalor4jygf7"
+path="res://.godot/imported/Shkaf.glb-8ab048afc77466e908b48c5c3574868c.scn"
 
 [deps]
 
-source_file="res://meshes/Lab.glb"
-dest_files=["res://.godot/imported/Lab.glb-e2fc9230d2cdaebccf6c1c0a99dcf48a.scn"]
+source_file="res://meshes/Shkaf.glb"
+dest_files=["res://.godot/imported/Shkaf.glb-8ab048afc77466e908b48c5c3574868c.scn"]
 
 [params]
 
@@ -32,6 +32,18 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:LightIndicatorGreen": {
+"generate/physics": true
+},
+"PATH:LightIndicatorRed": {
+"generate/physics": true
+},
+"PATH:Shkaf": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
