@@ -7,8 +7,8 @@ var parent : Node3D
 "
 
 [node name="GraphNode" type="GraphNode"]
-offset_right = 362.0
-offset_bottom = 296.0
+offset_right = 230.0
+offset_bottom = 170.0
 slot/0/left_enabled = true
 slot/0/left_type = 0
 slot/0/left_color = Color(0, 0.105478, 0.743339, 1)
@@ -51,82 +51,13 @@ script = SubResource("GDScript_dtbyw")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextEdit" type="TextEdit" parent="Control1"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -12.0
-offset_right = 78.0
-offset_bottom = 23.0
-grow_vertical = 2
-
-[node name="TextEdit2" type="TextEdit" parent="Control1"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -12.0
-offset_bottom = 23.0
-grow_horizontal = 0
-grow_vertical = 2
-
 [node name="Control2" type="Control" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextEdit" type="TextEdit" parent="Control2"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -12.0
-offset_right = 78.0
-offset_bottom = 23.0
-grow_vertical = 2
-
-[node name="TextEdit2" type="TextEdit" parent="Control2"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -12.0
-offset_bottom = 23.0
-grow_horizontal = 0
-grow_vertical = 2
-
 [node name="Control3" type="Control" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="TextEdit" type="TextEdit" parent="Control3"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -12.0
-offset_right = 78.0
-offset_bottom = 23.0
-grow_vertical = 2
-
-[node name="TextEdit2" type="TextEdit" parent="Control3"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -12.0
-offset_bottom = 23.0
-grow_horizontal = 0
-grow_vertical = 2
 
 [node name="Control4" type="Control" parent="."]
 layout_mode = 2

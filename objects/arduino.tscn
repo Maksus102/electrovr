@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b1mdfcevchqq" path="res://scripts/buttonSelect.gd" id="2_reduv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3okpj"]
+albedo_color = Color(0.641934, 0.641934, 0.641934, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_fr4ng"]
 material = SubResource("StandardMaterial3D_3okpj")

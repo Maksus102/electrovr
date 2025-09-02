@@ -29,6 +29,7 @@ class_name Player
 @onready var holder = $"Head/HoldPos"
 @onready var GloSig = get_node("/root/Global")
 @onready var graph = $GraphEdit
+var id : String = "Player"
 
 var cursstate = false
 
@@ -39,6 +40,7 @@ var inv_state = false
 var grab_obj : Node3D
 
 func _ready():
+	Global.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	setup()
 	emerged.connect(_on_controller_emerged.bind())
@@ -98,20 +100,6 @@ func _on_controller_emerged():
 
 func _on_controller_subemerged():
 	camera.environment = underwater_env
-
-	
-func save():
-	var save_dict = {		"filename" : get_scene_file_path(),
-		"parent" : get_parent().get_path(),
-		"pos_x" : position.x,
-		"pos_y" : position.y,
-		"pos_z" : position.z,
-		"basis.x" : basis.x,
-		"basis.y" : basis.y,
-		"basis.z" : basis.z,
-		"health:hp": $HealthComp.hp,
-		"global_rotation" : global_rotation}
-	return save_dict
 	
 func interact():
 	var detectedint = interactor.get_collider()
@@ -120,9 +108,6 @@ func interact():
 			if detectedint.script != null:
 				detectedint.use()
 				
-func grab(obj : StaticBody3D):
-	if grab_obj == null:
-		grab_obj = obj
-	else:
-		grab_obj = null
-	pass
+func save():
+	var stats = {"position" : self.position, "id" : "Player"}
+	Global.savesys.saved_nodes.append(stats)

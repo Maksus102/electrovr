@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw0eipl2hrbqg"]
+[gd_scene load_steps=7 format=3 uid="uid://dw0eipl2hrbqg"]
 
 [ext_resource type="PackedScene" uid="uid://dvo3wh4813sfi" path="res://meshes/Reactor.gltf" id="1_wv7u2"]
 [ext_resource type="FontFile" uid="uid://bkmqhdyvup080" path="res://UI/TDAText.ttf" id="2_3yg2h"]
 [ext_resource type="Script" uid="uid://d06t7tpc254wa" path="res://scripts/nuke_reactor.gd" id="2_8nx5u"]
+[ext_resource type="AudioStream" uid="uid://dgvffifgq0uu2" path="res://audio/button-pushogg.ogg" id="4_8nx5u"]
 
 [sub_resource type="Curve" id="Curve_3yg2h"]
 _data = [Vector2(0.223404, 0.764045), 0.0, 0.0, 0, 0, Vector2(0.56383, 0.741573), 0.0, 0.0, 0, 0, Vector2(0.579787, 0.235955), 0.0, 0.0, 0, 0]
@@ -11,7 +12,7 @@ point_count = 3
 [sub_resource type="BoxShape3D" id="BoxShape3D_3yg2h"]
 size = Vector3(0.304077, 0.27594, 0.285645)
 
-[node name="NukeReactor" instance=ExtResource("1_wv7u2")]
+[node name="NukeReactor" groups=["Saveable"] instance=ExtResource("1_wv7u2")]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_8nx5u")
@@ -30,5 +31,8 @@ wait_time = 0.5
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.497414, 0.248216, 0.00561523)
 shape = SubResource("BoxShape3D_3yg2h")
+
+[node name="ButtonAudio" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("4_8nx5u")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

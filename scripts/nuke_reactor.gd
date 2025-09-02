@@ -3,10 +3,10 @@ extends StaticBody3D
 @export var curve : Curve
 @export var output = 0.0
 @onready var timer = $Timer
-@export var graph_exp : Control
+@onready var audio = $ButtonAudio
 
 var state = false
-var updtime : Timer
+var id : String = "NR"
 var output_name = "NukeEnergy"
 
 func _ready() -> void:
@@ -19,6 +19,7 @@ func _on_timer_timeout() -> void:
 	pass # Replace with function body.
 	
 func use():
+	audio.play()
 	if state == true:
 		timer.stop()
 		output = 0.0
@@ -27,3 +28,16 @@ func use():
 	else:
 		timer.start()
 		state = true
+
+func save():
+	var stats = {"position" = self.position, "id" = "NR", "output" = output, "state" = state, "text.text" = text.text}
+	Global.savesys.saved_nodes.append(stats)
+	
+func dynset(prop : String, value : Variant):
+	match prop:
+		"text.text" : text.text = value
+		"state" : if state == true: timer.start()
+		else:
+			timer.stop()
+	pass
+	

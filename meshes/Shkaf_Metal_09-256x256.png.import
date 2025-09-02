@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dl16swl5j8iaq"
+path.s3tc="res://.godot/imported/Shkaf_Metal_09-256x256.png-53e468ab5678a0c8b23cee3e0f86ced9.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "2dd16e6daedf394951f8a5e5a67ee3b5"
+}
+
+[deps]
+
+source_file="res://meshes/Shkaf_Metal_09-256x256.png"
+dest_files=["res://.godot/imported/Shkaf_Metal_09-256x256.png-53e468ab5678a0c8b23cee3e0f86ced9.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

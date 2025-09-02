@@ -1,11 +1,21 @@
 extends Node3D
-@onready var graph = $GraphScreen/SubViewport/GraphInfo/Graph2D
+var id = "Shkaf"
 @onready var red_light : OmniLight3D = $LightIndicatorRed/RedLight
 @onready var red_emi : Material = $LightIndicatorRed.mesh.surface_get_material(0)
+@onready var alarm : AudioStreamPlayer3D = $Alarm
 var alarm_light_state : bool = false
+
 @onready var green_light : OmniLight3D = $LightIndicatorGreen/GreenLight
 @onready var green_emi : Material = $LightIndicatorGreen.mesh.surface_get_material(0)
-@onready var alarm : AudioStreamPlayer3D = $Alarm
+
+@onready var maxLabel : Label3D = $MaxLimiter/MaxLabel
+@onready var minLabel : Label3D = $MinLimiter/MinLabel
+var maxLimiter_state : bool = false
+var minLimiter_state : bool = false
+var maxLimiter_val : int = 0
+var minLimiter_val : int = 0
+
+@onready var graph = $GraphScreen/SubViewport/GraphInfo/Graph2D
 var InputValue1 : Node3D
 var InputValue2 : Node3D
 var InputValue3 : Node3D
@@ -14,11 +24,16 @@ var x = 0.0
 var plot1 : PlotItem
 var plot2 : PlotItem
 var plot3 : PlotItem
+var maxLine : PlotItem
+var minLine : PlotItem
 
 func _ready() -> void:
+	GreenLight(true)
 	plot1 = graph.add_plot_item("null",Color.BLUE,0.5)
 	plot2 = graph.add_plot_item("null",Color.GREEN,0.5)
 	plot3 = graph.add_plot_item("null",Color.YELLOW,0.5)
+	maxLine = graph.add_plot_item("Max", Color.RED,2)
+	minLine = graph.add_plot_item("Min", Color.RED,2)
 	Global.graphs.append(self)
 	pass
 
@@ -32,12 +47,22 @@ func _process(delta: float) -> void:
 	if (InputValue1 != null):
 		var y1: float = float(InputValue1.output)
 		plot1.add_point(Vector2(x,y1))
+		if (y1 >= maxLimiter_val and maxLimiter_state == true) or (y1 <= minLimiter_val and minLimiter_state == true):
+			RedLightAlarm(true)
+		else:
+			RedLightAlarm(false)
 	if (InputValue2 != null):
 		var y2: float = float(InputValue2.output)
 		plot2.add_point(Vector2(x,y2))
 	if (InputValue3 != null):
 		var y3: float = float(InputValue3.output)
 		plot3.add_point(Vector2(x,y3))
+	if (maxLimiter_state != false):
+		for limitXmax in range(0,100,99):
+			maxLine.add_point(Vector2(limitXmax,maxLimiter_val))
+	if (minLimiter_state != false):
+		for limitXmin in range(0,100,99):
+			minLine.add_point(Vector2(limitXmin,minLimiter_val))
 	pass
 	
 func Connect(port : int,source : Node3D):
@@ -54,9 +79,6 @@ func Connect(port : int,source : Node3D):
 		InputValue3 = source
 		plot3 = graph.add_plot_item(InputValue3.output_name,Color.YELLOW,0.5)
 	pass
-	
-func use():
-	Global.FindPlayer().grab($".")
 	
 func Disconnect(port : int):
 	if (port == 1):	
@@ -87,12 +109,14 @@ func RedLightAlarm(state : bool):
 		alarm.play()
 		red_emi.emission_enabled = true
 		red_light.show()
+		GreenLight(false)
 	else:
 		$AlarmTimer.stop()
 		alarm.stop()
 		red_emi.emission_enabled = false
 		red_light.hide()
 		alarm_light_state = false
+		GreenLight(true)
 
 
 func _on_alarm_timer_timeout() -> void:
@@ -105,3 +129,7 @@ func _on_alarm_timer_timeout() -> void:
 		red_light.show()
 		alarm_light_state = true
 	pass
+	
+func save():
+	var stats = {"id" : id, "alarm_light_state" : alarm_light_state, "maxLimiter_state" : maxLimiter_state, "minLimiter_state" : minLimiter_state}
+	Global.savesys.saved_nodes.append(stats)
